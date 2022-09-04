@@ -1,0 +1,51 @@
+# 3.2. Проектирование CD
+
+# Этап 1 — сборка
+# Собираем код, выходные файлы публикуем как артефакты
+# Этап 2 — тестирование
+# Получаем артефакты с этапа сборки, гоняем тесты, собраем данные покрытия кода
+# Этап 3 — отправка
+# Задача 1 — собираем nuget-пакет и отправляем в Azure DevOps
+# Задача 2 — собираем сайт из xmldoc в исходном коде и публикуем в GitLab Pages
+
+
+stages:
+  - build
+  - style_tests
+  - integration_tests
+
+Build:
+  stage: build
+  tags:
+
+
+  script:
+
+  artifacts:
+    paths:
+
+    expire_in: 30 days
+
+Style_Tests:
+  stage: style_tests
+  tags:
+  
+  script:
+    
+
+Integration_Tests:
+  stage: integration_tests
+  tags:
+   
+  script:
+  
+  
+  stages:
+  - deploy
+
+Deploy:
+  stage: deploy
+  
+  tags:
+
+  script:
